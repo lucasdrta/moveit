@@ -1,42 +1,19 @@
-import { useState, useEffect, useContext } from 'react'
-import { ChallengeContext } from '../contexts/challengesContext'
+import { useContext } from 'react'
+import { CountdownContext } from '../contexts/countdownContext'
 import styles from '../styles/components/Countdown.module.css'
 
-let countdownTimeout: NodeJS.Timeout
-
 export function Countdown() {
-  const { startNewChallenge } = useContext(ChallengeContext)
-
-  const [time, setTime] = useState(0.05 * 60)
-  const [isActive, setIsActive] = useState(false)
-  const [hasFinished, setHasFinished] = useState(false)
-
-  const minutes = Math.floor(time / 60)
-  const seconds = time % 60
+  const {
+    minutes, 
+    seconds,
+    hasFinished, 
+    isActive, 
+    startCountdown, 
+    resetCountdown
+  } = useContext(CountdownContext)
 
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('')
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('')
-
-  function startCountdown() {
-    setIsActive(true)
-  }
-  function resetCountdown() {
-    clearTimeout(countdownTimeout)
-    setIsActive(false)
-    setTime(0.05 * 60)
-  }
-
-  useEffect(() => {
-    if (isActive && time > 0) {
-      countdownTimeout = setTimeout(() => {
-        setTime(time - 1)
-      }, 1000)
-    } else if (isActive && time === 0) {
-      setHasFinished(true)
-      setIsActive(false)
-      startNewChallenge()
-    }
-  }, [isActive, time])
 
   return (
     <div>
@@ -58,7 +35,7 @@ export function Countdown() {
           className={styles.countdownButton}
         >
           Ciclo encerrado
-          <img src="icons/check_circle.svg" alt="Check"/>
+          <img src="icons/check_circle.svg" alt="Check" />
         </button>
       ) : (
           <>
