@@ -2,12 +2,12 @@
   <img alt="move.it" title="move.it" src=".github/logo.png" />
 </h1>
 
-<section align="center">
-<img src=".github/photo-3.png" width="200" alt="">
-<img src=".github/photo-1.png" width="200" alt="">
-<img src=".github/photo-2.png" width="200" alt="">
-<img src=".github/photo-4.png" width="200" alt="">
-</section>
+<h1 align="center">
+<img src=".github/photo-3.png" alt="Layout photo">
+<img src=".github/photo-1.png" alt="Layout photo">
+<img src=".github/photo-2.png" alt="Layout photo">
+<img src=".github/photo-4.png" alt="Layout photo">
+</h1>
 
 <br>
 <br>
