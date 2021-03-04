@@ -5,6 +5,8 @@ import { CompletedChallenges } from "../components/CompletedChallenges";
 import { Countdown } from "../components/Countdown";
 import Head from 'next/head'
 import { ChallengeBox } from "../components/ChallengeBox";
+import React from "react";
+import { CountdownProvider } from "../contexts/countdownContext";
 
 export default function Home() {
   return (
@@ -14,16 +16,18 @@ export default function Home() {
       </Head>
       <ExperienceBar />
 
-      <section>
-        <div>
-          <Profile />
-          <CompletedChallenges />
-          <Countdown />
-        </div>
-        <div>
-          <ChallengeBox />
-        </div>
-      </section>
+      <CountdownProvider>
+        <section>
+          <div>
+            <Profile />
+            <CompletedChallenges />
+            <Countdown />
+          </div>
+          <div>
+            <ChallengeBox />
+          </div>
+        </section>
+      </CountdownProvider>
     </div>
   )
 }
