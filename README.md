@@ -3,10 +3,10 @@
 </h1>
 
 <h1 align="center">
-<img src=".github/photo-3.png" alt="Layout photo">
-<img src=".github/photo-1.png" alt="Layout photo">
-<img src=".github/photo-2.png" alt="Layout photo">
-<img src=".github/photo-4.png" alt="Layout photo">
+<img src=".github/photo-3.png" width="600" alt="Layout photo">
+<img src=".github/photo-1.png" width="600" alt="Layout photo">
+<img src=".github/photo-2.png" width="600" alt="Layout photo">
+<img src=".github/photo-4.png" width="600" alt="Layout photo">
 </h1>
 
 <br>
